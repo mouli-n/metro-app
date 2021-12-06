@@ -2,6 +2,7 @@ import {  Typography } from "@material-ui/core";
 import { ArrowDropDown } from "@material-ui/icons";
 import React, { useState } from "react";
 import SubHeader from "./SubHeader";
+import { Link } from 'react-router';
 
 function Header() {
   const data = [
@@ -43,8 +44,8 @@ function Header() {
   const [show4, setShow4] = useState(false);
   const [show5, setShow5] = useState(false);
   const [show6, setShow6] = useState(false);
-
   const [runEffect, setEffect] = useState("");
+
   React.useEffect(() => {
     if (runEffect === "true") {
       setShow(true);
@@ -87,6 +88,7 @@ function Header() {
           alt="unice"
         />
       </div>
+
       <div
         style={{
           display: "flex",
@@ -96,6 +98,8 @@ function Header() {
           cursor: "pointer",
         }}
       >
+        <Link style={{ fontSize: '2rem' }} to="/">🏠</Link>
+        
         <Typography
           onMouseOver={() => setEffect("true")}
           onMouseLeave={() => setEffect("false")}
